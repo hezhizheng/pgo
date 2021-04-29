@@ -1,4 +1,4 @@
-package array
+package pgo
 
 func InArray(needle interface{}, hystack interface{}) bool {
 	switch key := needle.(type) {
