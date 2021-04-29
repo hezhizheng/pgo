@@ -4,11 +4,13 @@
 主要来源于 [https://www.php2golang.com](https://www.php2golang.com/)
 
 ## 安装
-`go get -u github.com/hezhizheng/php2golang@master`
+`go get -u github.com/hezhizheng/php2golang`
 
 ## 使用
 ```go
 pgo.InArray("hello",[]string{"hello","world"}) // true
+pgo.Md5("123465") // e10adc3949ba59abbe56e057f20f883e
+pgo.Uniqid("") // 608a594ee0624
 // 更多完善中...
 ```
 

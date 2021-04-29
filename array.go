@@ -1,5 +1,9 @@
 package pgo
 
+import "sync"
+
+var mutex = sync.Mutex{}
+
 func InArray(needle interface{}, hystack interface{}) bool {
 	switch key := needle.(type) {
 	case string:
@@ -24,4 +28,16 @@ func InArray(needle interface{}, hystack interface{}) bool {
 		return false
 	}
 	return false
+}
+
+func ArrayColumn(input map[string]map[string]interface{}, columnKey string) []interface{} {
+	columns := make([]interface{}, 0, len(input))
+	for _, val := range input {
+		if v, ok := val[columnKey]; ok {
+			mutex.Lock()
+			columns = append(columns, v)
+			mutex.Unlock()
+		}
+	}
+	return columns
 }
