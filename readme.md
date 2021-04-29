@@ -9,9 +9,11 @@
 ## 使用
 ```go
 pgo.InArray("hello",[]string{"hello","world"}) // true
+pgo.ArrayColumn()
 pgo.Md5("123465") // e10adc3949ba59abbe56e057f20f883e
 pgo.Uniqid("") // 608a594ee0624
-// 更多完善中...
+pgo.MbStrlen("中文 1") // 4
+// 用法可参考test , 更多函数完善中...
 ```
 
 ## License
