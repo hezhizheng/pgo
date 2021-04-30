@@ -1,6 +1,7 @@
 package pgo
 
 import (
+	"github.com/stretchr/testify/assert"
 	"log"
 	"testing"
 )
@@ -40,4 +41,70 @@ func TestArrayColumn(t *testing.T) {
 	}
 
 	log.Println(columns, len(columns))
+}
+
+// go test -v ./ -test.run TestArrayPush
+func TestArrayPush(t *testing.T) {
+	ary := &[]interface{}{
+		"Winnie",
+		"the",
+		"Pooh",
+	}
+
+	ele := "Winnie-the-Pooh"
+
+	push := ArrayPush(ary, ele)
+
+	pushAry := *ary
+
+	assert.Equal(t, 4, push)
+	assert.Equal(t, pushAry[3], ele)
+}
+
+// go test -v ./ -test.run TestArrayPop
+func TestArrayPop(t *testing.T) {
+	ary := &[]interface{}{
+		"Winnie",
+		"the",
+		"Pooh",
+	}
+
+	assert.True(t, InArray("Pooh",*ary))
+
+	ArrayPop(ary)
+
+	assert.Equal(t, 2, len(*ary))
+	assert.True(t, !InArray("Pooh",*ary))
+}
+
+func TestArrayUnshift(t *testing.T) {
+	ary := &[]interface{}{
+		"Winnie",
+		"the",
+		"Pooh",
+	}
+
+	ele := "Winnie-the-Pooh"
+
+	push := ArrayUnshift(ary, ele)
+
+	pushAry := *ary
+
+	assert.Equal(t, 4, push)
+	assert.Equal(t, pushAry[0], ele)
+}
+
+func TestArrayShift(t *testing.T) {
+	ary := &[]interface{}{
+		"Winnie",
+		"the",
+		"Pooh",
+	}
+
+	assert.True(t, InArray("Winnie",*ary))
+
+	ArrayShift(ary)
+
+	assert.Equal(t, 2, len(*ary))
+	assert.True(t, !InArray("Winnie",*ary))
 }
