@@ -13,6 +13,8 @@ pgo.ArrayColumn()
 pgo.Md5("123465") // e10adc3949ba59abbe56e057f20f883e
 pgo.Uniqid("") // 608a594ee0624
 pgo.MbStrlen("中文 1") // 4
+pgo.Blank(0) // false
+pgo.IsNumeric("000") // true
 // 用法可参考test , 更多函数完善中...
 ```
 
