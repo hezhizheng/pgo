@@ -4,6 +4,7 @@ import (
 	"crypto/md5"
 	"fmt"
 	"io"
+	"strings"
 	"time"
 	"unicode/utf8"
 )
@@ -23,4 +24,12 @@ func Uniqid(prefix string) string {
 
 func MbStrlen(str string) int {
 	return utf8.RuneCountInString(str)
+}
+
+func Explode(delimiter, text string) []string {
+	if len(delimiter) > len(text) {
+		return strings.Split(delimiter, text)
+	} else {
+		return strings.Split(text, delimiter)
+	}
 }

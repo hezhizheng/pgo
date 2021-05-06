@@ -1,6 +1,7 @@
 package pgo
 
 import (
+	"github.com/stretchr/testify/assert"
 	"log"
 	"testing"
 )
@@ -23,4 +24,10 @@ func TestUniqid(t *testing.T) {
 	if uid == "" {
 		t.Error("test MbStrlen fail")
 	}
+}
+
+func TestExplode(t *testing.T) {
+	explode := Explode(",","hello,world")
+	assert.Equal(t, "hello", explode[0])
+	assert.Equal(t, "world", explode[1])
 }
