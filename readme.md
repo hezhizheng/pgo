@@ -19,6 +19,7 @@ pgo.Md5("123465") // e10adc3949ba59abbe56e057f20f883e
 pgo.Uniqid("") // 608a594ee0624
 pgo.MbStrlen("中文 1") // 4
 pgo.Explode(",","hello,world")
+pgo.Strpos("+1s","s") // 2
 
 pgo.Blank(0) // false
 pgo.IsNumeric("000") // true

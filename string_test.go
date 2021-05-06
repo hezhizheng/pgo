@@ -31,3 +31,8 @@ func TestExplode(t *testing.T) {
 	assert.Equal(t, "hello", explode[0])
 	assert.Equal(t, "world", explode[1])
 }
+
+func TestStrpos(t *testing.T) {
+	strpos := Strpos("+1s","s")
+	assert.Equal(t, 2, strpos)
+}

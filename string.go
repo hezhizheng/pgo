@@ -33,3 +33,7 @@ func Explode(delimiter, text string) []string {
 		return strings.Split(text, delimiter)
 	}
 }
+
+func Strpos(haystack, needle string) int {
+	return strings.Index(haystack, needle)
+}
