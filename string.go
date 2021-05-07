@@ -37,3 +37,12 @@ func Explode(delimiter, text string) []string {
 func Strpos(haystack, needle string) int {
 	return strings.Index(haystack, needle)
 }
+
+func StrLimit(str string , LimitLength int, delimiter string) string {
+	strLen := MbStrlen(str)
+	if strLen > LimitLength {
+		str = string([]rune(str)[:LimitLength]) + delimiter
+		return str
+	}
+	return str
+}

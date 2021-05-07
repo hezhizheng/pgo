@@ -36,3 +36,8 @@ func TestStrpos(t *testing.T) {
 	strpos := Strpos("+1s","s")
 	assert.Equal(t, 2, strpos)
 }
+
+func TestStrLimit(t *testing.T) {
+	s := StrLimit("测试2q文字超出，符号补充 1a",10,"...")
+	assert.Equal(t, "测试2q文字超出，符...", s)
+}

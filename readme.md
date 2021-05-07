@@ -20,6 +20,8 @@ pgo.Uniqid("") // 608a594ee0624
 pgo.MbStrlen("中文 1") // 4
 pgo.Explode(",","hello,world")
 pgo.Strpos("+1s","s") // 2
+// 将字符串以指定长度进行截断
+pgo.StrLimit("测试2q文字超出，符号补充 1a",10,"...") // 测试2q文字超出，符...
 
 pgo.Blank(0) // false
 pgo.IsNumeric("000") // true
