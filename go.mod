@@ -1,4 +1,4 @@
-module github.com/hezhizheng/php2golang
+module github.com/hezhizheng/pgo
 
 go 1.13
 

@@ -1,4 +1,4 @@
-# php2golang 使用golang实现php一些常用的内置函数(包括但不限于)
+# pgo 使用golang实现一些常用的内置函数(包括但不限于php一些常用的内置函数)
 
 收集一些常用的操作函数(包括但不限于php一些常用的内置函数)，帮助更快的完成开发工作，并减少重复代码，
 主要来源于 [https://www.php2golang.com](https://www.php2golang.com/)
@@ -25,6 +25,8 @@ pgo.StrLimit("测试2q文字超出，符号补充 1a",10,"...") // 测试2q文�
 
 pgo.Blank(0) // false
 pgo.IsNumeric("000") // true
+
+pgo.FileExists("path") // bool
 // 用法可参考test , 更多函数完善中...
 ```
 
