@@ -4,7 +4,7 @@
 主要来源于 [https://www.php2golang.com](https://www.php2golang.com/)
 
 ## 安装
-`go get -u github.com/hezhizheng/php2golang`
+`go get -u github.com/hezhizheng/pgo`
 
 ## 使用
 ```go
