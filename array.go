@@ -1,6 +1,7 @@
 package pgo
 
 import (
+	"reflect"
 	"sync"
 )
 
@@ -103,4 +104,36 @@ func ArrayShift(s *[]interface{}) interface{} {
 	f := (*s)[0]
 	*s = (*s)[1:]
 	return f
+}
+
+func ArrayUnique(arr []string) []string{
+	size := len(arr)
+	result := make([]string, 0, size)
+	temp := map[string]struct{}{}
+	for i:=0; i < size; i++ {
+		if _,ok := temp[arr[i]]; ok != true {
+			temp[arr[i]] = struct{}{}
+			mutex.Lock()
+			result = append(result, arr[i])
+			mutex.Unlock()
+		}
+	}
+	return result
+}
+
+func ArraySearch(needle interface{}, hystack interface{}) (index int) {
+	index = -1
+
+	switch reflect.TypeOf(hystack).Kind() {
+	case reflect.Slice:
+		s := reflect.ValueOf(hystack)
+		sLen := s.Len()
+		for i := 0; i < sLen; i++ {
+			if reflect.DeepEqual(needle, s.Index(i).Interface()) == true {
+				index = i
+				return
+			}
+		}
+	}
+	return
 }

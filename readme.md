@@ -1,7 +1,7 @@
 # pgo 使用golang实现一些常用的函数(包括但不限于php一些常用的内置函数)
 
 收集一些常用的操作函数(包括但不限于php一些常用的内置函数)，帮助更快的完成开发工作，并减少重复代码，
-主要来源于 [https://www.php2golang.com](https://www.php2golang.com/)
+主要来源于 [https://www.php2golang.com](https://www.php2golang.com/) (每个函数都增加了简单的单元测试)
 
 ## 安装
 `go get -u github.com/hezhizheng/pgo`
@@ -14,6 +14,8 @@ pgo.ArrayPush()
 pgo.ArrayPop()
 pgo.ArrayUnshift()
 pgo.ArrayShift()
+pgo.ArrayUnique()
+pgo.ArraySearch()
 
 pgo.Md5("123465") // e10adc3949ba59abbe56e057f20f883e
 pgo.Uniqid("") // 608a594ee0624

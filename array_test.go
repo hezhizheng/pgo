@@ -1,6 +1,7 @@
 package pgo
 
 import (
+	"fmt"
 	"github.com/stretchr/testify/assert"
 	"log"
 	"testing"
@@ -107,4 +108,32 @@ func TestArrayShift(t *testing.T) {
 
 	assert.Equal(t, 2, len(*ary))
 	assert.True(t, !InArray("Winnie",*ary))
+}
+
+func TestArrayUnique(t *testing.T) {
+	ary := []string{
+		"Winnie",
+		"Winnie",
+		"Winnie",
+	}
+
+	uniqueAry := ArrayUnique(ary)
+
+	fmt.Println(uniqueAry)
+	assert.Equal(t, 1, len(uniqueAry))
+	assert.Equal(t, "Winnie", uniqueAry[0])
+}
+
+func TestArraySearch(t *testing.T) {
+	ary := []string{
+		"the",
+		"Winnie",
+		"Pooh",
+	}
+
+	find := ArraySearch("Winnie",ary)
+	notFind := ArraySearch("Winnie1",ary)
+
+	assert.Equal(t, 1, find)
+	assert.Equal(t, -1, notFind)
 }
